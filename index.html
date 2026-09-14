@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRẮC NGHIỆM ÔN THI QLMT</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#fdf4ff', 100: '#fae8ff', 500: '#d946ef', 600: '#c026d3', 700: '#a21caf' },
+                        bear: { 400: '#b45309', 500: '#92400e', 600: '#78350f' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-amber-50/50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 glass border-b border-amber-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('home')">
+                <div class="w-10 h-10 rounded-full bg-bear-500 flex items-center justify-center text-white text-xl shadow-md"></div>
+                <div>
+                    <h1 class="font-extrabold text-lg sm:text-xl text-bear-600 dark:text-amber-500">WEB TRẮC NGHIỆM ÔN THI QLMT</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">Học tập vui vẻ, thi cử nhẹ nhàng</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-2">
+                <button onclick="navigateTo('history')" class="p-2.5 rounded-xl hover:bg-amber-100 dark:hover:bg-slate-800 text-bear-500 dark:text-amber-400 font-medium text-sm flex gap-2 items-center">
+                    <i class="fa-solid fa-clock-rotate-left"></i> <span class="hidden sm:inline">Lịch sử</span>
+                </button>
+                <button onclick="toggleDarkMode()" class="p-2.5 rounded-xl hover:bg-amber-100 dark:hover:bg-slate-800 text-amber-500">
+                    <i id="theme-icon" class="fa-solid fa-moon text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 flex flex-col">
+        
+        <!-- TRANG CHỦ -->
+        <section id="view-home" class="view-section flex flex-col items-center py-10">
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-center mb-4 text-bear-600 dark:text-amber-500">Chọn môn học hôm nay nhé! </h2>
+            <p class="text-slate-600 dark:text-slate-300 mb-10 text-center max-w-2xl">Hãy chọn môn học bạn muốn ôn tập.</p>
+            
+            <div id="subject-list" class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+                <!-- Subjects rendered here via JS -->
+            </div>
+        </section>
+
+        <!-- TRANG CẤU HÌNH -->
+        <section id="view-config" class="view-section hidden max-w-4xl mx-auto w-full">
+            <div class="glass p-6 sm:p-8 rounded-3xl shadow-lg border border-amber-200 dark:border-slate-800">
+                <button onclick="navigateTo('home')" class="text-bear-500 font-bold text-sm mb-4 hover:underline">← Chọn môn khác</button>
+                <h2 id="config-subject-title" class="text-2xl font-bold mb-6 text-bear-600 dark:text-amber-500">Cấu hình bài thi</h2>
+
+                <!-- Bước 1: Chọn Phần -->
+                <div class="mb-8">
+                    <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">1. CHỌN PHẦN KIẾN THỨC</label>
+                    <div id="section-checkboxes" class="grid grid-cols-2 sm:grid-cols-4 gap-3"></div>
+                </div>
+
+                <!-- Bước 2: Chọn Số lượng -->
+                <div class="mb-8">
+                    <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">2. CHỌN SỐ LƯỢNG CÂU HỎI</label>
+                    <div id="question-count-container" class="flex flex-wrap gap-2 mb-2"></div>
+                    <p id="max-question-hint" class="text-xs text-rose-500 font-medium"></p>
+                </div>
+
+                <!-- Bước 3: Chế độ -->
+                <div class="mb-8">
+                    <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">3. CHẾ ĐỘ LÀM BÀI</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div id="mode-practice" onclick="selectMode('practice')" class="p-4 rounded-xl border-2 cursor-pointer transition-all">
+                            <h4 class="font-bold text-emerald-600">🟢 Luyện tập (Không tính giờ, có đáp án)</h4>
+                        </div>
+                        <div id="mode-exam" onclick="selectMode('exam')" class="p-4 rounded-xl border-2 cursor-pointer transition-all">
+                            <h4 class="font-bold text-rose-600">🔴 Kiểm tra (Tính giờ, nộp mới biết điểm)</h4>
+                        </div>
+                    </div>
+                    <!-- Thời gian (Chỉ hiện khi thi) -->
+                    <div id="time-config" class="mt-4 hidden flex gap-2">
+                        <button onclick="setTime(15)" class="btn-time px-4 py-1.5 rounded border text-sm font-bold">15p</button>
+                        <button onclick="setTime(30)" class="btn-time px-4 py-1.5 rounded border text-sm font-bold">30p</button>
+                        <button onclick="setTime(45)" class="btn-time px-4 py-1.5 rounded border text-sm font-bold">45p</button>
+                        <button onclick="setTime(60)" class="btn-time px-4 py-1.5 rounded border text-sm font-bold">60p</button>
+                    </div>
+                </div>
+
+                <button onclick="startQuiz()" class="w-full py-4 rounded-2xl bg-bear-500 hover:bg-bear-600 text-white font-bold text-lg shadow-lg transition-all">Bắt đầu làm bài 🚀</button>
+            </div>
+        </section>
+
+        <!-- MÀN HÌNH LÀM BÀI -->
+        <section id="view-quiz" class="view-section hidden flex flex-col gap-6 h-full">
+            <div class="glass p-4 rounded-2xl flex justify-between items-center border border-amber-200 dark:border-slate-800">
+                <span id="quiz-counter" class="font-bold text-bear-600 dark:text-amber-500">Câu 1 / 10</span>
+                <div id="quiz-timer" class="hidden text-rose-600 font-mono font-bold px-3 py-1 bg-rose-100 rounded-lg text-lg">00:00</div>
+                <button onclick="submitQuiz()" class="px-6 py-2 bg-rose-500 text-white rounded-lg font-bold hover:bg-rose-600">Nộp Bài</button>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <!-- Cột trái: Câu hỏi -->
+                <div class="lg:col-span-3 glass p-6 rounded-3xl border border-amber-200 dark:border-slate-800">
+                    <div class="flex justify-between mb-4">
+                        <span id="q-section-badge" class="text-xs font-bold px-3 py-1 bg-slate-200 dark:bg-slate-700 rounded-full"></span>
+                    </div>
+                    <h3 id="q-text" class="text-xl font-bold mb-6"></h3>
+                    <div id="q-options" class="space-y-3 mb-6"></div>
+                    <div id="q-explanation" class="hidden p-4 bg-amber-100 dark:bg-slate-800 text-amber-900 dark:text-amber-200 rounded-xl text-sm font-medium"></div>
+                    
+                    <div class="flex justify-between mt-6 pt-4 border-t border-amber-100 dark:border-slate-700">
+                        <button onclick="navQ(-1)" class="px-5 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 font-bold">← Trước</button>
+                        <button onclick="toggleFlag()" id="btn-flag" class="px-4 py-2 rounded-lg border-2 border-amber-400 text-amber-600 font-bold">🔖 Đánh dấu</button>
+                        <button onclick="navQ(1)" class="px-5 py-2 rounded-lg bg-bear-500 hover:bg-bear-600 text-white font-bold">Sau →</button>
+                    </div>
+                </div>
+                <!-- Cột phải: Grid chọn câu -->
+                <div class="lg:col-span-1 glass p-5 rounded-3xl border border-amber-200 dark:border-slate-800 h-fit">
+                    <h4 class="font-bold mb-4 text-center">Bảng Câu Hỏi</h4>
+                    <div id="q-grid" class="grid grid-cols-5 gap-2 max-h-96 overflow-y-auto custom-scrollbar"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KẾT QUẢ & XEM LẠI & LỊCH SỬ (Giữ logic tương tự phiên bản trước, được tối ưu trong JS) -->
+        <section id="view-result" class="view-section hidden max-w-3xl mx-auto w-full text-center glass p-8 rounded-3xl">
+            <h2 class="text-4xl mb-2">🎉</h2>
+            <h2 class="text-3xl font-extrabold text-bear-600 dark:text-amber-500 mb-6">HOÀN THÀNH BÀI THI</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="p-4 bg-white dark:bg-slate-800 rounded-2xl shadow"><p class="text-sm">Điểm</p><p id="r-score" class="text-2xl font-bold text-sky-500">0</p></div>
+                <div class="p-4 bg-white dark:bg-slate-800 rounded-2xl shadow"><p class="text-sm">Đúng</p><p id="r-correct" class="text-2xl font-bold text-emerald-500">0</p></div>
+                <div class="p-4 bg-white dark:bg-slate-800 rounded-2xl shadow"><p class="text-sm">Sai</p><p id="r-wrong" class="text-2xl font-bold text-rose-500">0</p></div>
+                <div class="p-4 bg-white dark:bg-slate-800 rounded-2xl shadow"><p class="text-sm">Tỷ lệ</p><p id="r-acc" class="text-2xl font-bold text-purple-500">0%</p></div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="viewReview()" class="px-6 py-2 bg-slate-700 text-white rounded-xl font-bold">📖 Xem lại chi tiết</button>
+                <button onclick="practiceWrong()" class="px-6 py-2 bg-purple-600 text-white rounded-xl font-bold">🔄 Luyện câu sai</button>
+                <button onclick="navigateTo('home')" class="px-6 py-2 bg-bear-500 text-white rounded-xl font-bold">🏠 Về trang chủ</button>
+            </div>
+        </section>
+
+        <section id="view-review" class="view-section hidden max-w-4xl mx-auto w-full">
+            <button onclick="navigateTo('result')" class="text-bear-500 font-bold mb-4 hover:underline">← Quay lại kết quả</button>
+            <div id="review-list" class="space-y-6"></div>
+        </section>
+
+        <section id="view-history" class="view-section hidden max-w-4xl mx-auto w-full glass p-6 rounded-3xl">
+            <h2 class="text-2xl font-bold mb-6 text-bear-600 dark:text-amber-500">Lịch sử làm bài</h2>
+            <table class="w-full text-left bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow">
+                <thead class="bg-slate-100 dark:bg-slate-900"><tr><th class="p-3">Ngày</th><th class="p-3">Môn</th><th class="p-3">Điểm</th><th class="p-3">Chế độ</th></tr></thead>
+                <tbody id="history-body" class="divide-y divide-slate-100 dark:divide-slate-700"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
