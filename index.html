@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nơi Ôn Thi Của Nhà Gấu 🐻 - Học tập vui vẻ, thi cử nhẹ nhàng</title>
+    <title>TRẮC NGHIỆM ÔN THI QLMT</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,1063 +12,158 @@
             theme: {
                 extend: {
                     colors: {
-                        bear: {
-                            DEFAULT: '#8B4513',
-                            dark: '#65351F',
-                            light: '#A0522D',
-                            50: '#FAF5F0',
-                            100: '#F4ECE4',
-                            200: '#EADCCE',
-                            300: '#D5BEA8',
-                            400: '#B08866',
-                            500: '#8B4513',
-                            600: '#73370E',
-                            700: '#65351F',
-                            800: '#4D2513',
-                            900: '#381A0B'
-                        },
-                        cream: {
-                            DEFAULT: '#FFF9F0',
-                            50: '#FFFFFF',
-                            100: '#FFFDF9',
-                            200: '#FFF9F0',
-                            300: '#FBF2E3',
-                            400: '#F5E6CE'
-                        },
-                        honey: {
-                            DEFAULT: '#F4A340',
-                            50: '#FEF7EE',
-                            100: '#FDEED9',
-                            200: '#FBD9B0',
-                            300: '#F9C184',
-                            400: '#F6B362',
-                            500: '#F4A340',
-                            600: '#D9821E',
-                            700: '#B86510'
-                        },
-                        pastel: {
-                            pink: '#F7DDE3',
-                            pinkdark: '#E8B6C2',
-                            green: '#DDECCF',
-                            greendark: '#B8D79F',
-                            blue: '#D8E8F5',
-                            bluedark: '#A7C9E7',
-                            yellow: '#FEF0C7'
-                        },
-                        subtext: '#718096'
+                        primary: { 50: '#fdf4ff', 100: '#fae8ff', 500: '#d946ef', 600: '#c026d3', 700: '#a21caf' },
+                        bear: { 400: '#b45309', 500: '#92400e', 600: '#78350f' }
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts & FontAwesome -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Confetti for celebration -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-cream-200 dark:bg-[#19120e] text-slate-800 dark:text-[#FAF5F0] min-h-screen flex flex-col font-sans transition-colors duration-300 relative selection:bg-honey selection:text-white">
+<body class="bg-amber-50/50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-300">
 
-    <!-- Navbar -->
-    <header class="sticky top-0 z-40 navbar-cozy transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-            <!-- Mascot Logo & Brand -->
-            <div class="flex items-center gap-3 sm:gap-4 cursor-pointer select-none" onclick="navigateTo('home')">
-                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#FFFDF9] dark:bg-[#2c2018] border-2 border-[#EFE0CF] dark:border-[#47352a] flex items-center justify-center text-2xl shadow-sm bear-mascot shrink-0">
-                    🐻
-                </div>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 glass border-b border-amber-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('home')">
+                <div class="w-10 h-10 rounded-full bg-bear-500 flex items-center justify-center text-white text-xl shadow-md"></div>
                 <div>
-                    <h1 class="font-extrabold text-base sm:text-lg tracking-tight text-bear-dark dark:text-honey flex items-center gap-1.5">
-                        <span>NƠI ÔN THI CỦA NHÀ GẤU</span>
-                        <span class="text-xs">🍯</span>
-                    </h1>
-                    <p class="text-[11px] sm:text-xs text-subtext dark:text-[#A0AEC0] hidden sm:block font-medium">
-                        Học tập vui vẻ, thi cử nhẹ nhàng
-                    </p>
+                    <h1 class="font-extrabold text-lg sm:text-xl text-bear-600 dark:text-amber-500">WEB TRẮC NGHIỆM ÔN THI QLMT</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">Học tập vui vẻ, thi cử nhẹ nhàng</p>
                 </div>
             </div>
             
-            <!-- Quick Actions -->
-            <div class="flex items-center gap-2 sm:gap-3">
-                <button onclick="navigateTo('home')" class="hidden md:flex items-center gap-2 px-3.5 py-2 rounded-xl text-subtext dark:text-[#A0AEC0] hover:text-bear-dark dark:hover:text-honey hover:bg-[#FFFDF9] dark:hover:bg-[#2c2018] font-bold text-xs sm:text-sm transition-all border border-transparent hover:border-[#EFE0CF] dark:hover:border-[#47352a]">
-                    <i class="fa-solid fa-house text-sm"></i>
-                    <span>Trang chủ</span>
+            <div class="flex items-center gap-2">
+                <button onclick="navigateTo('history')" class="p-2.5 rounded-xl hover:bg-amber-100 dark:hover:bg-slate-800 text-bear-500 dark:text-amber-400 font-medium text-sm flex gap-2 items-center">
+                    <i class="fa-solid fa-clock-rotate-left"></i> <span class="hidden sm:inline">Lịch sử</span>
                 </button>
-
-                <button onclick="navigateTo('history')" class="flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-xl text-subtext dark:text-[#A0AEC0] hover:text-bear-dark dark:hover:text-honey hover:bg-[#FFFDF9] dark:hover:bg-[#2c2018] font-bold text-xs sm:text-sm transition-all border border-transparent hover:border-[#EFE0CF] dark:hover:border-[#47352a]">
-                    <i class="fa-solid fa-clock-rotate-left text-sm"></i>
-                    <span class="hidden sm:inline">Lịch sử</span>
-                    <span id="history-badge-count" class="text-[10px] font-extrabold px-1.5 py-0.2 rounded-full bg-honey text-white">0</span>
-                </button>
-
-                <!-- Sound Toggle -->
-                <button onclick="toggleSound()" id="btn-sound-toggle" title="Bật/Tắt âm thanh hiệu ứng" class="p-2 sm:p-2.5 rounded-xl text-subtext dark:text-[#A0AEC0] hover:bg-[#FFFDF9] dark:hover:bg-[#2c2018] hover:text-honey transition-all border border-transparent hover:border-[#EFE0CF] dark:hover:border-[#47352a]">
-                    <i id="sound-icon" class="fa-solid fa-volume-high text-base"></i>
-                </button>
-
-                <!-- Dark Mode Toggle -->
-                <button onclick="toggleDarkMode()" title="Chuyển chế độ sáng/tối" class="p-2 sm:p-2.5 rounded-xl text-honey hover:bg-[#FFFDF9] dark:hover:bg-[#2c2018] transition-all border border-transparent hover:border-[#EFE0CF] dark:hover:border-[#47352a]">
+                <button onclick="toggleDarkMode()" class="p-2.5 rounded-xl hover:bg-amber-100 dark:hover:bg-slate-800 text-amber-500">
                     <i id="theme-icon" class="fa-solid fa-moon text-lg"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Container -->
-    <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col relative z-10">
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 flex flex-col">
         
-        <!-- ================= TRANG CHỦ (VIEW HOME) ================= -->
-        <section id="view-home" class="view-section flex flex-col">
+        <!-- TRANG CHỦ -->
+        <section id="view-home" class="view-section flex flex-col items-center py-10">
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-center mb-4 text-bear-600 dark:text-amber-500">Chọn môn học hôm nay nhé! </h2>
+            <p class="text-slate-600 dark:text-slate-300 mb-10 text-center max-w-2xl">Hãy chọn môn học bạn muốn ôn tập.</p>
             
-            <!-- Hero Section: Warm, Kawaii, Cozy Study -->
-            <div class="cozy-card rounded-3xl p-6 sm:p-10 mb-8 border border-[#F1E5D5] dark:border-[#3d2d23] overflow-hidden relative">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    
-                    <!-- Left: Warm Typography & Search -->
-                    <div class="lg:col-span-7 flex flex-col items-start">
-                        <!-- Cute Greeting Pill -->
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream-300 dark:bg-[#34241b] border border-[#EADBCC] dark:border-[#4d3628] text-bear-dark dark:text-honey text-xs font-bold mb-4">
-                            <span>🐾 Hôm nay mình học gì nhỉ?</span>
-                        </div>
-
-                        <!-- Main Title -->
-                        <h2 class="text-2xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight text-bear-dark dark:text-[#FAF5F0] mb-3 leading-snug">
-                            Chọn môn học hôm nay nhé! <span class="text-honey">🍯</span>
-                        </h2>
-
-                        <!-- Description -->
-                        <p class="text-sm sm:text-base text-subtext dark:text-[#C5B8A8] mb-6 leading-relaxed">
-                            Mỗi ngày một chút, kiến thức sẽ đầy dần. Cùng Nhà Gấu ôn thi thật nhẹ nhàng nhé!
-                        </p>
-
-                        <!-- Bear's Daily Motivation Quote Card -->
-                        <div class="w-full p-3.5 sm:p-4 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e] flex items-center gap-3.5 mb-6">
-                            <span class="text-2xl shrink-0">☕</span>
-                            <p id="bear-quote" class="text-xs sm:text-sm font-semibold text-bear dark:text-honey italic">
-                                "Uống một ngụm nước ấm rồi cùng Gấu làm vài câu trắc nghiệm nhé!"
-                            </p>
-                        </div>
-
-                        <!-- Search Bar for Subjects -->
-                        <div class="w-full relative">
-                            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-subtext text-sm"></i>
-                            <input type="text" id="subject-search-input" oninput="handleSubjectSearch(this.value)" placeholder="Tìm kiếm môn học (CNTT, Môi trường, Tư tưởng...)" 
-                                   class="w-full pl-11 pr-4 py-3 rounded-2xl bg-cream-50 dark:bg-[#1a120e] border border-[#EADBCC] dark:border-[#47352a] text-xs sm:text-sm text-slate-800 dark:text-[#FAF5F0] focus:outline-none focus:border-honey transition-colors placeholder:text-subtext/70">
-                            <button id="clear-search-btn" onclick="clearSubjectSearch()" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-subtext hover:text-bear-dark text-xs font-bold px-2 py-1">
-                                ✕
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Right: Vector Illustration of Cozy Study Bear -->
-                    <div class="lg:col-span-5 flex justify-center items-center">
-                        <div class="w-full max-w-[280px] sm:max-w-[320px] relative animate-wobble-slow">
-                            <!-- SVG Mascot Cozy Study Bear -->
-                            <svg viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto drop-shadow-sm">
-                                <!-- Desk Ground Shadow -->
-                                <ellipse cx="160" cy="260" rx="140" ry="14" fill="#EADCCE" class="dark:fill-[#1e1510]"/>
-                                
-                                <!-- Wooden Desk Surface -->
-                                <rect x="25" y="215" width="270" height="42" rx="12" fill="#D5BEA8" class="dark:fill-[#3a2a20]"/>
-                                <rect x="25" y="215" width="270" height="12" rx="6" fill="#B08866" class="dark:fill-[#4d372b]"/>
-
-                                <!-- Stack of Pastel Textbooks (Left on Desk) -->
-                                <rect x="45" y="196" width="60" height="18" rx="4" fill="#DDECCF"/>
-                                <rect x="42" y="193" width="12" height="21" rx="2" fill="#B8D79F"/>
-                                
-                                <rect x="48" y="177" width="55" height="19" rx="4" fill="#F7DDE3"/>
-                                <rect x="45" y="174" width="12" height="22" rx="2" fill="#E8B6C2"/>
-                                
-                                <rect x="52" y="161" width="50" height="16" rx="4" fill="#D8E8F5"/>
-                                <rect x="49" y="159" width="10" height="18" rx="2" fill="#A7C9E7"/>
-
-                                <!-- Warm Cocoa Mug (Right on Desk) -->
-                                <rect x="220" y="185" width="30" height="32" rx="6" fill="#F4A340"/>
-                                <path d="M250 192C256 192 258 202 250 205" stroke="#F4A340" stroke-width="4" stroke-linecap="round"/>
-                                <ellipse cx="235" cy="186" rx="13" ry="4" fill="#65351F"/>
-                                <!-- Steam rising -->
-                                <path d="M230 178Q233 172 230 166" stroke="#B08866" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-                                <path d="M237 175Q240 169 237 163" stroke="#B08866" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-
-                                <!-- Bear Body -->
-                                <ellipse cx="160" cy="180" rx="65" ry="60" fill="#8B4513"/>
-                                <ellipse cx="160" cy="190" rx="42" ry="40" fill="#FAF5F0" class="dark:fill-[#FAF5F0]"/>
-
-                                <!-- Bear Ears -->
-                                <circle cx="118" cy="85" r="22" fill="#8B4513"/>
-                                <circle cx="118" cy="85" r="13" fill="#F7DDE3"/>
-                                
-                                <circle cx="202" cy="85" r="22" fill="#8B4513"/>
-                                <circle cx="202" cy="85" r="13" fill="#F7DDE3"/>
-
-                                <!-- Bear Head -->
-                                <circle cx="160" cy="115" r="54" fill="#8B4513"/>
-
-                                <!-- Bear Snout / Muzzle -->
-                                <ellipse cx="160" cy="128" rx="26" ry="20" fill="#FAF5F0"/>
-                                <!-- Nose -->
-                                <ellipse cx="160" cy="120" rx="9" ry="6" fill="#65351F"/>
-                                <!-- Mouth -->
-                                <path d="M154 128C157 134 163 134 166 128" stroke="#65351F" stroke-width="2.5" stroke-linecap="round"/>
-
-                                <!-- Blushing cheeks -->
-                                <circle cx="132" cy="128" r="7" fill="#F7DDE3" opacity="0.8"/>
-                                <circle cx="188" cy="128" r="7" fill="#F7DDE3" opacity="0.8"/>
-
-                                <!-- Sparkly Eyes -->
-                                <circle cx="140" cy="112" r="5" fill="#381A0B"/>
-                                <circle cx="142" cy="110" r="1.8" fill="#FFFFFF"/>
-                                
-                                <circle cx="180" cy="112" r="5" fill="#381A0B"/>
-                                <circle cx="182" cy="110" r="1.8" fill="#FFFFFF"/>
-
-                                <!-- Open Notebook on Desk -->
-                                <path d="M125 216L142 205L178 205L195 216H125Z" fill="#FAF5F0"/>
-                                <path d="M160 205V216" stroke="#D5BEA8" stroke-width="1.5"/>
-
-                                <!-- Paws holding pencil -->
-                                <ellipse cx="138" cy="214" rx="11" ry="8" fill="#8B4513"/>
-                                <ellipse cx="182" cy="214" rx="11" ry="8" fill="#8B4513"/>
-                                <!-- Yellow Pencil -->
-                                <rect x="175" y="196" width="6" height="24" rx="2" transform="rotate(-30 175 196)" fill="#F4A340"/>
-                                <polygon points="187,218 193,222 189,214" fill="#B08866"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- "Tiếp tục ôn tập" Container (Only rendered when user has study history) -->
-            <div id="continue-study-container" class="mb-8 hidden">
-                <!-- Dynamically injected by JS -->
-            </div>
-
-            <!-- Real Statistics Strip (No fake metrics) -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 mb-10">
-                <div class="cozy-card rounded-2xl p-4 text-center">
-                    <div class="text-xl sm:text-2xl font-extrabold text-bear-dark dark:text-honey" id="stat-active-sub">3 Môn</div>
-                    <div class="text-xs text-subtext dark:text-[#A0AEC0] font-medium mt-0.5">Đang mở ôn thi</div>
-                </div>
-                <div class="cozy-card rounded-2xl p-4 text-center">
-                    <div class="text-xl sm:text-2xl font-extrabold text-bear-dark dark:text-honey" id="stat-total-q">1,247</div>
-                    <div class="text-xs text-subtext dark:text-[#A0AEC0] font-medium mt-0.5">Câu hỏi tuyển chọn</div>
-                </div>
-                <div class="cozy-card rounded-2xl p-4 text-center">
-                    <div class="text-xl sm:text-2xl font-extrabold text-bear-dark dark:text-honey" id="stat-history-count">0</div>
-                    <div class="text-xs text-subtext dark:text-[#A0AEC0] font-medium mt-0.5">Lượt bài đã làm</div>
-                </div>
-                <div class="cozy-card rounded-2xl p-4 text-center">
-                    <div class="text-xl sm:text-2xl font-extrabold text-bear-dark dark:text-honey" id="stat-avg-score">-.-</div>
-                    <div class="text-xs text-subtext dark:text-[#A0AEC0] font-medium mt-0.5">Điểm trung bình</div>
-                </div>
-            </div>
-
-            <!-- Subject Cards Section -->
-            <div class="w-full">
-                <div class="flex items-center justify-between mb-5">
-                    <h3 class="text-lg sm:text-xl font-extrabold text-bear-dark dark:text-[#FAF5F0] flex items-center gap-2">
-                        <span>Danh Sách Môn Học</span>
-                        <span class="text-sm font-normal text-subtext dark:text-[#A0AEC0]">(Chọn để bắt đầu)</span>
-                    </h3>
-                    <span id="subject-count-badge" class="text-xs font-bold px-2.5 py-1 rounded-full bg-cream-100 dark:bg-[#2c2018] border border-[#EADBCC] dark:border-[#47352a] text-bear-dark dark:text-honey">
-                        3 môn khả dụng
-                    </span>
-                </div>
-                
-                <!-- Dynamic Grid: 3 cols desktop, 2 cols tablet, 1 col mobile -->
-                <div id="subject-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-                    <!-- Subjects dynamically injected by JS -->
-                </div>
-
-                <!-- Empty state when search yields no matches -->
-                <div id="subject-empty-search" class="cozy-card rounded-3xl p-8 text-center hidden">
-                    <span class="text-3xl mb-2 block">🔍</span>
-                    <h4 class="font-extrabold text-base text-bear-dark dark:text-[#FAF5F0] mb-1">Không tìm thấy môn học nào</h4>
-                    <p class="text-xs text-subtext mb-4">Hãy thử tìm kiếm với từ khóa khác như "CNTT", "Môi trường", "Tư tưởng"...</p>
-                    <button onclick="clearSubjectSearch()" class="px-4 py-2 rounded-xl bg-honey text-white text-xs font-bold shadow-sm">
-                        Xem tất cả môn học
-                    </button>
-                </div>
+            <div id="subject-list" class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+                <!-- Subjects rendered here via JS -->
             </div>
         </section>
 
-        <!-- ================= TRANG CON HỌC TIẾNG ANH 4 KỸ NĂNG (VIEW ENGLISH) ================= -->
-        <section id="view-english" class="view-section hidden max-w-5xl mx-auto w-full">
-            <!-- Breadcrumb / Header Actions -->
-            <div class="flex items-center justify-between mb-5">
-                <button onclick="navigateTo('home')" class="group inline-flex items-center gap-2 text-bear-dark dark:text-honey font-bold text-xs sm:text-sm hover:underline transition-colors">
-                    <i class="fa-solid fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
-                    <span>← Quay lại trang chủ</span>
-                </button>
-                <button onclick="startEnglishQuizFromTab()" class="px-3.5 py-1.5 rounded-xl bg-honey hover:bg-honey-600 text-white font-extrabold text-xs shadow-xs flex items-center gap-1.5 transition-all">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    <span>Thi trắc nghiệm (50 câu)</span>
-                </button>
-            </div>
+        <!-- TRANG CẤU HÌNH -->
+        <section id="view-config" class="view-section hidden max-w-4xl mx-auto w-full">
+            <div class="glass p-6 sm:p-8 rounded-3xl shadow-lg border border-amber-200 dark:border-slate-800">
+                <button onclick="navigateTo('home')" class="text-bear-500 font-bold text-sm mb-4 hover:underline">← Chọn môn khác</button>
+                <h2 id="config-subject-title" class="text-2xl font-bold mb-6 text-bear-600 dark:text-amber-500">Cấu hình bài thi</h2>
 
-            <!-- English Banner Card: MCBooks inspired style -->
-            <div class="cozy-card rounded-3xl p-6 sm:p-8 mb-6 border border-[#F1E5D5] dark:border-[#3d2d23] relative overflow-hidden">
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-pastel-blue dark:bg-[#1f2d3d] flex items-center justify-center text-3xl sm:text-4xl shadow-xs shrink-0">
-                            🇬🇧
-                        </div>
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-pastel-green dark:bg-[#1a3325] text-emerald-800 dark:text-emerald-300">
-                                    Basic English Skills
-                                </span>
-                                <span class="text-xs text-subtext">• Giáo trình trực quan MCBooks</span>
-                            </div>
-                            <h2 class="text-xl sm:text-2xl font-extrabold text-bear-dark dark:text-[#FAF5F0] mt-0.5">
-                                Bài Tập Từ Vựng & 4 Kỹ Năng Tiếng Anh 🐻
-                            </h2>
-                            <p class="text-xs sm:text-sm text-subtext dark:text-[#C5B8A8] mt-1">
-                                Học theo sơ đồ tư duy (Mind Map), hình ảnh trực quan & luyện tập Nghe, Nói, Đọc, Viết.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5 Tabs Navigation Bar -->
-                <div class="flex items-center gap-2 mt-6 pt-5 border-t border-[#F1E5D5] dark:border-[#38271e] overflow-x-auto pb-1 custom-scrollbar">
-                    <button onclick="switchEnglishTab('listening')" id="tab-btn-listening" class="en-tab-btn px-4 py-2 rounded-2xl text-xs sm:text-sm font-extrabold flex items-center gap-2 shrink-0 transition-all bg-honey text-white shadow-xs">
-                        <span>🎧 1. Nghe (Listening)</span>
-                    </button>
-                    <button onclick="switchEnglishTab('speaking')" id="tab-btn-speaking" class="en-tab-btn px-4 py-2 rounded-2xl text-xs sm:text-sm font-extrabold flex items-center gap-2 shrink-0 transition-all text-subtext hover:bg-cream-100 dark:hover:bg-[#2c2018]">
-                        <span>🗣️ 2. Nói (Speaking)</span>
-                    </button>
-                    <button onclick="switchEnglishTab('reading')" id="tab-btn-reading" class="en-tab-btn px-4 py-2 rounded-2xl text-xs sm:text-sm font-extrabold flex items-center gap-2 shrink-0 transition-all text-subtext hover:bg-cream-100 dark:hover:bg-[#2c2018]">
-                        <span>📖 3. Đọc & Mind Map</span>
-                    </button>
-                    <button onclick="switchEnglishTab('writing')" id="tab-btn-writing" class="en-tab-btn px-4 py-2 rounded-2xl text-xs sm:text-sm font-extrabold flex items-center gap-2 shrink-0 transition-all text-subtext hover:bg-cream-100 dark:hover:bg-[#2c2018]">
-                        <span>✍️ 4. Viết (Writing)</span>
-                    </button>
-                    <button onclick="switchEnglishTab('quiz')" id="tab-btn-quiz" class="en-tab-btn px-4 py-2 rounded-2xl text-xs sm:text-sm font-extrabold flex items-center gap-2 shrink-0 transition-all text-subtext hover:bg-cream-100 dark:hover:bg-[#2c2018]">
-                        <span>📝 5. Luyện Đề (Quiz)</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- TAB 1: LISTENING (KỸ NĂNG NGHE) -->
-            <div id="en-tab-listening" class="en-tab-content space-y-6">
-                <!-- Notebook Spiral Tips -->
-                <div class="notebook-tips p-5 sm:p-6">
-                    <div class="notebook-rings -mt-5 -mx-5 sm:-mx-6 mb-4">
-                        <span class="ring-hole"></span><span class="ring-hole"></span><span class="ring-hole"></span><span class="ring-hole"></span><span class="ring-hole"></span><span class="ring-hole"></span><span class="ring-hole"></span><span class="ring-hole"></span>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2">
-                        <span class="text-xl">💡</span>
-                        <h3 class="font-extrabold text-sm sm:text-base text-bear-dark dark:text-honey">
-                            Sổ Tay Bí Kíp Luyện Nghe Của Nhà Gấu (Theo sách trang 11-12)
-                        </h3>
-                    </div>
-                    <ul class="text-xs sm:text-sm text-subtext dark:text-[#C5B8A8] space-y-1.5 list-disc list-inside">
-                        <li><b>Bước 1:</b> Quan sát câu hỏi và các lựa chọn để định hình từ khóa (keyword).</li>
-                        <li><b>Bước 2:</b> Bấm nút nghe phát âm của Nhà Gấu, chú ý âm đầu và âm đuôi.</li>
-                        <li><b>Bước 3:</b> Nhanh tay chọn đáp án chính xác và bấm nghe lại để ghi nhớ thật sâu!</li>
-                    </ul>
-                </div>
-
-                <!-- Interactive Listening Exercise 1: Word & Picture Selection -->
-                <div class="cozy-card rounded-3xl p-6 sm:p-8 border border-[#F1E5D5] dark:border-[#3d2d23]">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-extrabold uppercase px-3 py-1 rounded-full bg-pastel-green dark:bg-[#1a3325] text-emerald-800 dark:text-emerald-300">
-                            Bài Tập 1: Nghe & Chọn Đáp Án Đúng
-                        </span>
-                        <span id="listening-q-indicator" class="text-xs font-bold text-subtext">Câu 1 / 6</span>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-cream-100 dark:bg-[#201611] text-center mb-6">
-                        <button onclick="playCurrentListeningWord()" class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-honey hover:bg-honey-600 text-white font-extrabold text-sm sm:text-base shadow-sm transition-transform active:scale-95">
-                            <i class="fa-solid fa-volume-high text-lg"></i>
-                            <span>BẤM ĐỂ NGHE AUDIO 🔊</span>
-                        </button>
-                        <p class="text-xs text-subtext mt-2">Bấm nút trên để nghe phát âm, sau đó chọn từ đúng bên dưới</p>
-                    </div>
-
-                    <!-- Options Grid -->
-                    <div id="listening-options-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-                        <!-- Injected by JS -->
-                    </div>
-
-                    <!-- Feedback Box -->
-                    <div id="listening-feedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold mb-4"></div>
-
-                    <!-- Navigation Next -->
-                    <div class="flex justify-end">
-                        <button onclick="nextListeningQuestion()" id="btn-next-listen" class="px-5 py-2.5 rounded-xl bg-bear hover:bg-bear-dark text-white font-bold text-xs transition-all flex items-center gap-2">
-                            <span>Câu nghe tiếp theo</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Interactive Listening Exercise 2: Large Numbers & Decimals -->
-                <div class="cozy-card rounded-3xl p-6 sm:p-8 border border-[#F1E5D5] dark:border-[#3d2d23]">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-extrabold uppercase px-3 py-1 rounded-full bg-pastel-pink dark:bg-[#341d24] text-rose-800 dark:text-rose-300">
-                            Bài Tập 2: Nghe Số Lớn & Phân Số (Theme 1 trang 16, 18)
-                        </span>
-                    </div>
-                    <p class="text-xs text-subtext mb-5">Luyện nghe và phân biệt cách đọc các con số lớn, phân số và số thập phân trong tiếng Anh.</p>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="listening-numbers-container">
-                        <!-- Numbers exercises injected by JS -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 2: SPEAKING (KỸ NĂNG NÓI & PHÁT ÂM) -->
-            <div id="en-tab-speaking" class="en-tab-content hidden space-y-6">
-                <!-- Pronunciation Cards -->
-                <div class="cozy-card rounded-3xl p-6 sm:p-8 border border-[#F1E5D5] dark:border-[#3d2d23]">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-base sm:text-lg font-extrabold text-bear-dark dark:text-[#FAF5F0] flex items-center gap-2">
-                            <span>Luyện Phát Âm Chuẩn IPA</span>
-                            <span class="text-xs font-normal text-subtext">(Từ vựng trọng tâm từ sách)</span>
-                        </h3>
-                        <span class="text-xs font-bold text-honey">Click để nghe & nói</span>
-                    </div>
-                    <p class="text-xs text-subtext mb-6">Nghe mẫu phát âm chuẩn giọng bản ngữ và luyện đọc theo từng âm tiết.</p>
-
-                    <div id="speaking-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                        <!-- Injected by JS -->
-                    </div>
-                </div>
-
-                <!-- Mini Dialogues Practice (Theo sách trang 12-13) -->
-                <div class="cozy-card rounded-3xl p-6 sm:p-8 border border-[#F1E5D5] dark:border-[#3d2d23]">
-                    <h3 class="text-base sm:text-lg font-extrabold text-bear-dark dark:text-[#FAF5F0] mb-2 flex items-center gap-2">
-                        <span>Luyện Hội Thoại Hàng Ngày (Mini Dialogues)</span>
-                        <span class="text-xs font-normal text-subtext">Trang 12, 13</span>
-                    </h3>
-                    <p class="text-xs text-subtext mb-6">Lắng nghe đoạn hội thoại ngắn tự nhiên và bấm luyện đọc theo từng nhân vật.</p>
-
-                    <!-- Dialogue 1 -->
-                    <div class="p-5 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e] mb-5">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold text-bear-dark dark:text-honey uppercase">Hội Thoại 1: Where Bees Live (Nơi Ong Sống)</span>
-                            <button onclick="speakEnglish('Dave: Have you ever seen where bees live? Tia: Yes, they live in a hive!')" class="text-xs font-extrabold text-honey hover:underline flex items-center gap-1">
-                                <i class="fa-solid fa-play"></i> Nghe cả bài
-                            </button>
-                        </div>
-                        <div class="space-y-3 text-xs sm:text-sm">
-                            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#2c2018]">
-                                <div>
-                                    <b class="text-blue-600 dark:text-blue-400">Dave:</b> 
-                                    <span class="ml-1 text-slate-800 dark:text-[#FAF5F0]">"Have you ever seen where bees live?"</span>
-                                </div>
-                                <button onclick="speakEnglish('Have you ever seen where bees live?')" class="p-1.5 rounded-lg text-honey hover:bg-cream-100 dark:hover:bg-[#34241b]" title="Nghe câu này">
-                                    <i class="fa-solid fa-volume-high"></i>
-                                </button>
-                            </div>
-                            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#2c2018]">
-                                <div>
-                                    <b class="text-emerald-600 dark:text-emerald-400">Tia:</b> 
-                                    <span class="ml-1 text-slate-800 dark:text-[#FAF5F0]">"Yes, they live in a hive!"</span>
-                                </div>
-                                <button onclick="speakEnglish('Yes, they live in a hive!')" class="p-1.5 rounded-lg text-honey hover:bg-cream-100 dark:hover:bg-[#34241b]" title="Nghe câu này">
-                                    <i class="fa-solid fa-volume-high"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Dialogue 2 -->
-                    <div class="p-5 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e]">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold text-bear-dark dark:text-honey uppercase">Hội Thoại 2: The Dandelion Exhibit (Hoa Bồ Công Anh)</span>
-                            <button onclick="speakEnglish('Abby: What is your favorite plant in the exhibit? Bob: I love the dandelion. It is simple yet fascinating!')" class="text-xs font-extrabold text-honey hover:underline flex items-center gap-1">
-                                <i class="fa-solid fa-play"></i> Nghe cả bài
-                            </button>
-                        </div>
-                        <div class="space-y-3 text-xs sm:text-sm">
-                            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#2c2018]">
-                                <div>
-                                    <b class="text-purple-600 dark:text-purple-400">Abby:</b> 
-                                    <span class="ml-1 text-slate-800 dark:text-[#FAF5F0]">"What's your favorite plant in the exhibit?"</span>
-                                </div>
-                                <button onclick="speakEnglish('What is your favorite plant in the exhibit?')" class="p-1.5 rounded-lg text-honey hover:bg-cream-100 dark:hover:bg-[#34241b]">
-                                    <i class="fa-solid fa-volume-high"></i>
-                                </button>
-                            </div>
-                            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#2c2018]">
-                                <div>
-                                    <b class="text-rose-600 dark:text-rose-400">Bob:</b> 
-                                    <span class="ml-1 text-slate-800 dark:text-[#FAF5F0]">"I love the dandelion. It's simple yet fascinating!"</span>
-                                </div>
-                                <button onclick="speakEnglish('I love the dandelion. It is simple yet fascinating!')" class="p-1.5 rounded-lg text-honey hover:bg-cream-100 dark:hover:bg-[#34241b]">
-                                    <i class="fa-solid fa-volume-high"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 3: READING & MIND MAP (KỸ NĂNG ĐỌC & TỪ VỰNG) -->
-            <div id="en-tab-reading" class="en-tab-content hidden space-y-6">
-                <!-- Mind Map Vocabulary Grid (From MCBooks Theme 1) -->
-                <div class="cozy-card rounded-3xl p-6 sm:p-8 border border-[#F1E5D5] dark:border-[#3d2d23]">
-                    <div class="flex items-center justify-between mb-2">
-                        <h3 class="text-base sm:text-lg font-extrabold text-bear-dark dark:text-[#FAF5F0] flex items-center gap-2">
-                            <span>Sơ Đồ Tư Duy Từ Vựng (Theme 1: Numbers, Shapes, Time)</span>
-                        </h3>
-                        <span class="text-xs text-honey font-bold">Bấm từ để nghe phát âm</span>
-                    </div>
-                    <p class="text-xs text-subtext mb-6">Mỗi nhóm từ vựng được liên kết sinh động giúp não bộ ghi nhớ lâu hơn.</p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="mindmap-container">
-                        <!-- Mind Map Cards Injected by JS -->
-                    </div>
-                </div>
-
-                <!-- Mini Reading Passage & Comprehension Questions -->
-                <div class="cozy-card rounded-3xl p-6 sm:p-8 border border-[#F1E5D5] dark:border-[#3d2d23]">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-extrabold uppercase px-3 py-1 rounded-full bg-pastel-yellow dark:bg-[#342e1d] text-amber-800 dark:text-amber-300">
-                            Đọc Hiểu Mini (Reading Comprehension)
-                        </span>
-                        <button onclick="speakEnglish('A Day in Bear House. On a sunny Sunday morning, Little Bear eats a half of a fresh biscuit and drinks a warm cup of cocoa. At two thirty in the afternoon, he skates around the park with his roller skates. At nighttime, after sunset, he reads twenty pages of his favorite English book.')" class="text-xs font-extrabold text-honey hover:underline flex items-center gap-1">
-                            <i class="fa-solid fa-volume-high"></i> Nghe đọc bài
-                        </button>
-                    </div>
-
-                    <!-- Short Passage -->
-                    <div class="p-5 rounded-2xl bg-cream-100 dark:bg-[#201611] text-xs sm:text-sm leading-relaxed text-slate-800 dark:text-[#FAF5F0] mb-6">
-                        <h4 class="font-extrabold text-sm sm:text-base text-bear-dark dark:text-honey mb-2">A Day in Bear's House 🐻</h4>
-                        <p>
-                            On a sunny Sunday <b>morning</b>, Little Bear eats <b>a half</b> of a fresh <b>biscuit</b> and drinks a warm cup of cocoa. At two thirty in the <b>afternoon</b>, he goes to the park and glides smoothly with his <b>roller skates</b>. At <b>nighttime</b>, after <b>sunset</b>, he always reads <b>twenty</b> pages of his favorite English book before going to bed.
-                        </p>
-                    </div>
-
-                    <!-- 3 Reading Questions -->
-                    <div class="space-y-4" id="reading-questions-container">
-                        <!-- Reading questions injected by JS -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 4: WRITING (KỸ NĂNG VIẾT & TỪ VỰNG) -->
-            <div id="en-tab-writing" class="en-tab-content hidden space-y-6">
-                <!-- Missing Letters Exercise (Theo sách trang 10, 20, 23) -->
-                <div class="cozy-card rounded-3xl p-6 sm:p-8 border border-[#F1E5D5] dark:border-[#3d2d23]">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-base sm:text-lg font-extrabold text-bear-dark dark:text-[#FAF5F0] flex items-center gap-2">
-                            <span>Dạng 1: Viết Chữ Cái Còn Thiếu Để Tạo Từ Đúng</span>
-                            <span class="text-xs font-normal text-subtext">Trang 10, 20, 23</span>
-                        </h3>
-                    </div>
-                    <p class="text-xs text-subtext mb-6">Gõ chữ cái tiếng Anh còn thiếu vào các ô trống nét đứt màu cam và bấm Kiểm tra kết quả.</p>
-
-                    <div id="missing-letters-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                        <!-- Missing letter cards injected by JS -->
-                    </div>
-
-                    <div class="flex items-center justify-between pt-4 border-t border-[#F1E5D5] dark:border-[#38271e]">
-                        <span id="missing-letters-score" class="text-xs font-bold text-subtext">Chưa kiểm tra</span>
-                        <div class="flex gap-2">
-                            <button onclick="resetMissingLetters()" class="px-4 py-2 rounded-xl bg-cream-300 dark:bg-[#34241b] text-subtext dark:text-[#FAF5F0] font-bold text-xs hover:bg-cream-200">
-                                Làm lại
-                            </button>
-                            <button onclick="checkMissingLetters()" class="px-5 py-2 rounded-xl bg-honey hover:bg-honey-600 text-white font-extrabold text-xs shadow-xs">
-                                Kiểm tra đáp án 🚀
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Matching Game (Theo sách trang 8, 15, 16) -->
-                <div class="cozy-card rounded-3xl p-6 sm:p-8 border border-[#F1E5D5] dark:border-[#3d2d23]">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-base sm:text-lg font-extrabold text-bear-dark dark:text-[#FAF5F0] flex items-center gap-2">
-                            <span>Dạng 2: Trò Chơi Nối Từ Với Nghĩa (Matching Game)</span>
-                            <span class="text-xs font-normal text-subtext">Trang 8, 15, 16</span>
-                        </h3>
-                    </div>
-                    <p class="text-xs text-subtext mb-6">Click vào 1 từ tiếng Anh ở Cột A, sau đó click vào nghĩa tương ứng ở Cột B để ghép cặp.</p>
-
-                    <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-6">
-                        <div>
-                            <h4 class="text-xs font-extrabold text-bear-dark dark:text-honey uppercase mb-3">Cột A (Từ vựng tiếng Anh)</h4>
-                            <div id="matching-col-a" class="space-y-2.5">
-                                <!-- Injected by JS -->
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-extrabold text-bear-dark dark:text-honey uppercase mb-3">Cột B (Nghĩa / Hình minh họa)</h4>
-                            <div id="matching-col-b" class="space-y-2.5">
-                                <!-- Injected by JS -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between pt-4 border-t border-[#F1E5D5] dark:border-[#38271e]">
-                        <span id="matching-score-badge" class="text-xs font-bold text-subtext">Đã ghép: 0 / 5 cặp</span>
-                        <button onclick="resetMatchingGame()" class="px-4 py-2 rounded-xl bg-cream-300 dark:bg-[#34241b] text-subtext dark:text-[#FAF5F0] font-bold text-xs hover:bg-cream-200">
-                            Chơi lại bài nối
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 5: QUIZ PRACTICE (LUYỆN ĐỀ TRẮC NGHIỆM TIẾNG ANH) -->
-            <div id="en-tab-quiz" class="en-tab-content hidden space-y-6">
-                <div class="cozy-card rounded-3xl p-6 sm:p-10 border border-[#F1E5D5] dark:border-[#3d2d23] text-center">
-                    <div class="w-16 h-16 rounded-3xl bg-pastel-blue dark:bg-[#1f2d3d] text-honey text-3xl flex items-center justify-center mx-auto mb-4">
-                        📝
-                    </div>
-                    <h3 class="text-xl sm:text-2xl font-extrabold text-bear-dark dark:text-[#FAF5F0] mb-2">
-                        Ngân Hàng 50 Câu Trắc Nghiệm Tiếng Anh Chuẩn MCBooks
-                    </h3>
-                    <p class="text-xs sm:text-sm text-subtext max-w-lg mx-auto mb-8">
-                        Đầy đủ các chủ đề: Số đếm & Thời gian, Hình khối & Màu sắc, Đời sống hàng ngày và Tự nhiên. Có thể thi tính giờ hoặc luyện tập biết đáp án tức thì!
-                    </p>
-
-                    <!-- Breakdown Cards -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto mb-8">
-                        <div class="p-3.5 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e]">
-                            <div class="text-lg font-extrabold text-honey">15 câu</div>
-                            <div class="text-[11px] text-subtext">Numbers & Time</div>
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e]">
-                            <div class="text-lg font-extrabold text-emerald-600 dark:text-emerald-400">12 câu</div>
-                            <div class="text-[11px] text-subtext">Shapes & Colors</div>
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e]">
-                            <div class="text-lg font-extrabold text-rose-500">12 câu</div>
-                            <div class="text-[11px] text-subtext">Daily Life & Time</div>
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e]">
-                            <div class="text-lg font-extrabold text-blue-600 dark:text-blue-400">11 câu</div>
-                            <div class="text-[11px] text-subtext">Nature & Animals</div>
-                        </div>
-                    </div>
-
-                    <button onclick="startEnglishQuizFromTab()" class="px-8 py-4 rounded-2xl bg-bear hover:bg-bear-dark text-white font-extrabold text-sm sm:text-base shadow-sm transition-transform active:scale-95 flex items-center justify-center gap-2 mx-auto">
-                        <span>BẮT ĐẦU THI TRẮC NGHIỆM TIẾNG ANH 🚀</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= TRANG CẤU HÌNH (VIEW CONFIG) ================= -->
-        <section id="view-config" class="view-section hidden max-w-3xl mx-auto w-full">
-            <div class="cozy-card rounded-3xl p-6 sm:p-9 border border-[#F1E5D5] dark:border-[#3d2d23]">
-                
-                <!-- Back Breadcrumb -->
-                <button onclick="navigateTo('home')" class="group inline-flex items-center gap-2 text-bear-dark dark:text-honey font-bold text-xs sm:text-sm mb-6 hover:underline transition-colors">
-                    <i class="fa-solid fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
-                    <span>← Quay lại chọn môn học</span>
-                </button>
-
-                <!-- Subject Config Header -->
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-7 border-b border-[#F1E5D5] dark:border-[#3d2d23]">
-                    <div>
-                        <div class="flex items-center gap-3">
-                            <span id="config-subject-icon" class="text-3xl">💻</span>
-                            <h2 id="config-subject-title" class="text-xl sm:text-2xl font-extrabold text-bear-dark dark:text-[#FAF5F0]">Thiết lập bài thi</h2>
-                        </div>
-                        <p id="config-subject-desc" class="text-xs text-subtext dark:text-[#A0AEC0] mt-1.5"></p>
-                    </div>
-                    <div class="self-start sm:self-center px-3.5 py-1.5 rounded-2xl bg-cream-100 dark:bg-[#34241b] border border-[#EADBCC] dark:border-[#4d3628] text-bear-dark dark:text-honey text-xs font-bold flex items-center gap-2">
-                        <i class="fa-solid fa-database text-[11px]"></i>
-                        <span id="config-total-available-badge">0 câu có sẵn</span>
-                    </div>
-                </div>
-
-                <!-- Step 1: Chọn Phần / Chương Kiến Thức -->
+                <!-- Bước 1: Chọn Phần -->
                 <div class="mb-8">
-                    <div class="flex items-center justify-between gap-2 mb-3.5">
-                        <label class="text-xs sm:text-sm font-extrabold text-bear-dark dark:text-[#FAF5F0] uppercase tracking-wide flex items-center gap-2">
-                            <span class="w-5 h-5 rounded-full bg-honey text-white text-[11px] flex items-center justify-center font-bold">1</span>
-                            <span>Chọn Chương / Phần Kiến Thức</span>
-                        </label>
-                        <div class="flex gap-2">
-                            <button onclick="toggleAllSections(true)" class="text-xs font-bold text-honey hover:underline">Chọn tất cả</button>
-                            <span class="text-slate-300 dark:text-[#4d3628]">|</span>
-                            <button onclick="toggleAllSections(false)" class="text-xs font-bold text-subtext hover:underline">Bỏ chọn</button>
-                        </div>
-                    </div>
-                    <div id="section-checkboxes" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                        <!-- Sections rendered here -->
-                    </div>
+                    <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">1. CHỌN PHẦN KIẾN THỨC</label>
+                    <div id="section-checkboxes" class="grid grid-cols-2 sm:grid-cols-4 gap-3"></div>
                 </div>
 
-                <!-- Step 2: Chọn Số Lượng Câu Hỏi -->
+                <!-- Bước 2: Chọn Số lượng -->
                 <div class="mb-8">
-                    <div class="flex items-center justify-between mb-3.5">
-                        <label class="text-xs sm:text-sm font-extrabold text-bear-dark dark:text-[#FAF5F0] uppercase tracking-wide flex items-center gap-2">
-                            <span class="w-5 h-5 rounded-full bg-honey text-white text-[11px] flex items-center justify-center font-bold">2</span>
-                            <span>Số Lượng Câu Hỏi</span>
-                        </label>
-                        <span id="max-question-hint" class="text-xs font-semibold text-honey"></span>
-                    </div>
-                    
+                    <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">2. CHỌN SỐ LƯỢNG CÂU HỎI</label>
                     <div id="question-count-container" class="flex flex-wrap gap-2 mb-2"></div>
+                    <p id="max-question-hint" class="text-xs text-rose-500 font-medium"></p>
                 </div>
 
-                <!-- Step 3: Chọn Chế Độ Làm Bài -->
+                <!-- Bước 3: Chế độ -->
                 <div class="mb-8">
-                    <label class="block text-xs sm:text-sm font-extrabold text-bear-dark dark:text-[#FAF5F0] uppercase tracking-wide mb-3.5 flex items-center gap-2">
-                        <span class="w-5 h-5 rounded-full bg-honey text-white text-[11px] flex items-center justify-center font-bold">3</span>
-                        <span>Chế Độ Ôn Luyện</span>
-                    </label>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                        <!-- Practice Mode -->
-                        <div id="mode-practice" onclick="selectMode('practice')" class="p-4 rounded-2xl border-2 cursor-pointer transition-all">
-                            <div class="flex items-start gap-3">
-                                <span class="text-2xl shrink-0">📖</span>
-                                <div>
-                                    <h4 class="font-extrabold text-sm text-slate-900 dark:text-[#FAF5F0] mb-0.5">Luyện Tập Tự Do</h4>
-                                    <p class="text-[11px] text-subtext dark:text-[#A0AEC0] leading-relaxed">
-                                        Không giới hạn giờ. Hiện đáp án và giải thích ngay sau mỗi câu làm.
-                                    </p>
-                                </div>
-                            </div>
+                    <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">3. CHẾ ĐỘ LÀM BÀI</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div id="mode-practice" onclick="selectMode('practice')" class="p-4 rounded-xl border-2 cursor-pointer transition-all">
+                            <h4 class="font-bold text-emerald-600">🟢 Luyện tập (Không tính giờ, có đáp án)</h4>
                         </div>
-
-                        <!-- Exam Mode -->
-                        <div id="mode-exam" onclick="selectMode('exam')" class="p-4 rounded-2xl border-2 cursor-pointer transition-all">
-                            <div class="flex items-start gap-3">
-                                <span class="text-2xl shrink-0">⏱️</span>
-                                <div>
-                                    <h4 class="font-extrabold text-sm text-slate-900 dark:text-[#FAF5F0] mb-0.5">Thi Thử Tính Giờ</h4>
-                                    <p class="text-[11px] text-subtext dark:text-[#A0AEC0] leading-relaxed">
-                                        Đồng hồ đếm ngược như thi thật. Nộp bài xong mới biết điểm.
-                                    </p>
-                                </div>
-                            </div>
+                        <div id="mode-exam" onclick="selectMode('exam')" class="p-4 rounded-xl border-2 cursor-pointer transition-all">
+                            <h4 class="font-bold text-rose-600">🔴 Kiểm tra (Tính giờ, nộp mới biết điểm)</h4>
                         </div>
                     </div>
-
-                    <!-- Exam Time Selector -->
-                    <div id="time-config" class="mt-4 p-3.5 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e] hidden">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-                            <span class="text-xs font-bold text-bear-dark dark:text-honey flex items-center gap-1.5">
-                                <i class="fa-regular fa-clock"></i>
-                                <span>Thời gian làm bài:</span>
-                            </span>
-                            <div class="flex flex-wrap gap-2">
-                                <button onclick="setTime(15)" class="btn-time px-3 py-1.5 rounded-xl border text-xs font-bold transition-all">15p</button>
-                                <button onclick="setTime(30)" class="btn-time px-3 py-1.5 rounded-xl border text-xs font-bold transition-all">30p</button>
-                                <button onclick="setTime(45)" class="btn-time px-3 py-1.5 rounded-xl border text-xs font-bold transition-all">45p</button>
-                                <button onclick="setTime(60)" class="btn-time px-3 py-1.5 rounded-xl border text-xs font-bold transition-all">60p</button>
-                                <button onclick="setTime(90)" class="btn-time px-3 py-1.5 rounded-xl border text-xs font-bold transition-all">90p</button>
-                            </div>
-                        </div>
+                    <!-- Thời gian (Chỉ hiện khi thi) -->
+                    <div id="time-config" class="mt-4 hidden flex gap-2">
+                        <button onclick="setTime(15)" class="btn-time px-4 py-1.5 rounded border text-sm font-bold">15p</button>
+                        <button onclick="setTime(30)" class="btn-time px-4 py-1.5 rounded border text-sm font-bold">30p</button>
+                        <button onclick="setTime(45)" class="btn-time px-4 py-1.5 rounded border text-sm font-bold">45p</button>
+                        <button onclick="setTime(60)" class="btn-time px-4 py-1.5 rounded border text-sm font-bold">60p</button>
                     </div>
                 </div>
 
-                <!-- Submit CTA Button -->
-                <button onclick="startQuiz()" class="w-full py-4 rounded-2xl bg-bear hover:bg-bear-dark text-white font-extrabold text-sm sm:text-base shadow-sm transition-all transform active:scale-[0.99] flex items-center justify-center gap-2">
-                    <span>BẮT ĐẦU ÔN BÀI 🚀</span>
-                </button>
+                <button onclick="startQuiz()" class="w-full py-4 rounded-2xl bg-bear-500 hover:bg-bear-600 text-white font-bold text-lg shadow-lg transition-all">Bắt đầu làm bài 🚀</button>
             </div>
         </section>
 
-        <!-- ================= MÀN HÌNH LÀM BÀI (VIEW QUIZ) ================= -->
-        <section id="view-quiz" class="view-section hidden flex flex-col gap-4 sm:gap-5 w-full max-w-5xl mx-auto">
-            
-            <!-- Top HUD Bar -->
-            <div class="cozy-card p-3 sm:p-4 rounded-2xl flex flex-wrap items-center justify-between gap-3 border border-[#F1E5D5] dark:border-[#3d2d23]">
-                <!-- Left: Subject & Current Question -->
-                <div class="flex items-center gap-3">
-                    <button onclick="confirmExitQuiz()" class="p-2 rounded-xl text-subtext hover:text-bear-dark dark:hover:text-[#FAF5F0] transition-colors" title="Thoát bài thi">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </button>
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span id="quiz-subject-badge" class="text-xs font-extrabold text-bear-dark dark:text-honey">Tư Tưởng HCM</span>
-                            <span class="text-slate-300 dark:text-[#47352a]">•</span>
-                            <span id="quiz-counter" class="font-extrabold text-xs sm:text-sm text-slate-800 dark:text-[#FAF5F0]">Câu 1 / 10</span>
-                        </div>
-                        <!-- Mini progress bar -->
-                        <div class="w-32 sm:w-44 h-1.5 bg-cream-300 dark:bg-[#34241b] rounded-full mt-1 overflow-hidden">
-                            <div id="quiz-progress-bar" class="h-full bg-honey rounded-full transition-all duration-300" style="width: 10%;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Center: Timer (Exam mode) -->
-                <div id="quiz-timer-container" class="flex items-center gap-2">
-                    <div id="quiz-timer" class="hidden text-rose-600 dark:text-rose-400 font-mono font-extrabold px-3 py-1 bg-cream-100 dark:bg-[#2c2018] border border-rose-300 dark:border-rose-900 rounded-xl text-xs sm:text-sm flex items-center gap-2">
-                        <i class="fa-regular fa-clock"></i>
-                        <span id="timer-text">00:00</span>
-                    </div>
-                </div>
-
-                <!-- Right: Actions -->
-                <div class="flex items-center gap-2">
-                    <!-- Mobile drawer toggle -->
-                    <button onclick="toggleMobileDrawer()" class="lg:hidden px-3 py-1.5 rounded-xl bg-cream-100 dark:bg-[#2c2018] text-subtext dark:text-[#FAF5F0] text-xs font-bold flex items-center gap-1.5">
-                        <i class="fa-solid fa-list-ol"></i>
-                        <span>Câu</span>
-                    </button>
-
-                    <!-- Keyboard guide toggle -->
-                    <button onclick="openKeyboardModal()" title="Xem phím tắt" class="hidden sm:flex p-2 rounded-xl text-subtext hover:text-bear-dark text-xs font-bold">
-                        <i class="fa-solid fa-keyboard"></i>
-                    </button>
-
-                    <!-- Submit Button -->
-                    <button onclick="promptSubmitQuiz()" class="px-4 py-2 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-extrabold text-xs sm:text-sm shadow-sm active:scale-95 transition-all flex items-center gap-1.5">
-                        <i class="fa-solid fa-check"></i>
-                        <span>Nộp bài</span>
-                    </button>
-                </div>
+        <!-- MÀN HÌNH LÀM BÀI -->
+        <section id="view-quiz" class="view-section hidden flex flex-col gap-6 h-full">
+            <div class="glass p-4 rounded-2xl flex justify-between items-center border border-amber-200 dark:border-slate-800">
+                <span id="quiz-counter" class="font-bold text-bear-600 dark:text-amber-500">Câu 1 / 10</span>
+                <div id="quiz-timer" class="hidden text-rose-600 font-mono font-bold px-3 py-1 bg-rose-100 rounded-lg text-lg">00:00</div>
+                <button onclick="submitQuiz()" class="px-6 py-2 bg-rose-500 text-white rounded-lg font-bold hover:bg-rose-600">Nộp Bài</button>
             </div>
             
-            <!-- Main Content Area: 2 Columns -->
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 items-start">
-                
-                <!-- Left: Question & Answers (3 cols) -->
-                <div class="lg:col-span-3 cozy-card p-5 sm:p-7 rounded-3xl border border-[#F1E5D5] dark:border-[#3d2d23] relative">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <!-- Cột trái: Câu hỏi -->
+                <div class="lg:col-span-3 glass p-6 rounded-3xl border border-amber-200 dark:border-slate-800">
+                    <div class="flex justify-between mb-4">
+                        <span id="q-section-badge" class="text-xs font-bold px-3 py-1 bg-slate-200 dark:bg-slate-700 rounded-full"></span>
+                    </div>
+                    <h3 id="q-text" class="text-xl font-bold mb-6"></h3>
+                    <div id="q-options" class="space-y-3 mb-6"></div>
+                    <div id="q-explanation" class="hidden p-4 bg-amber-100 dark:bg-slate-800 text-amber-900 dark:text-amber-200 rounded-xl text-sm font-medium"></div>
                     
-                    <!-- Top badges -->
-                    <div class="flex items-center justify-between mb-4">
-                        <span id="q-section-badge" class="text-xs font-extrabold px-3 py-1 bg-cream-300 dark:bg-[#34241b] text-bear-dark dark:text-honey border border-[#EADBCC] dark:border-[#4d3628] rounded-full flex items-center gap-1.5">
-                            <i class="fa-solid fa-bookmark text-[10px]"></i>
-                            <span>Chương 1</span>
-                        </span>
-                        
-                        <button onclick="toggleFlag()" id="btn-flag" class="px-3 py-1 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all">
-                            <i class="fa-regular fa-star"></i>
-                            <span>Đánh dấu</span>
-                        </button>
-                    </div>
-
-                    <!-- Question Prompt -->
-                    <h3 id="q-text" class="text-base sm:text-lg font-bold leading-relaxed text-slate-900 dark:text-[#FAF5F0] mb-5"></h3>
-
-                    <!-- Options list -->
-                    <div id="q-options" class="space-y-3 mb-5">
-                        <!-- Options injected by JS -->
-                    </div>
-
-                    <!-- Explanation box (Practice mode) -->
-                    <div id="q-explanation" class="hidden p-4 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#3d2d23] text-xs sm:text-sm font-medium">
-                    </div>
-                    
-                    <!-- Bottom Question Navigation Controls -->
-                    <div class="flex items-center justify-between mt-6 pt-4 border-t border-[#F1E5D5] dark:border-[#3d2d23] gap-2">
-                        <button onclick="navQ(-1)" id="btn-prev-q" class="px-4 sm:px-5 py-2 rounded-xl bg-cream-100 dark:bg-[#2c2018] border border-[#EADBCC] dark:border-[#3d2d23] font-bold text-xs text-subtext dark:text-[#FAF5F0] hover:bg-cream-300 transition-all flex items-center gap-1.5">
-                            <i class="fa-solid fa-arrow-left"></i>
-                            <span class="hidden sm:inline">Câu trước</span>
-                        </button>
-                        
-                        <div class="text-[11px] text-subtext hidden sm:block">
-                            Phím <kbd class="px-1.5 py-0.5 rounded bg-cream-300 dark:bg-[#34241b] font-mono">A-D</kbd> để chọn • <kbd class="px-1.5 py-0.5 rounded bg-cream-300 dark:bg-[#34241b] font-mono">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-cream-300 dark:bg-[#34241b] font-mono">→</kbd> chuyển câu
-                        </div>
-
-                        <button onclick="navQ(1)" id="btn-next-q" class="px-4 sm:px-5 py-2 rounded-xl bg-bear hover:bg-bear-dark text-white font-bold text-xs transition-all flex items-center gap-1.5">
-                            <span class="hidden sm:inline">Câu tiếp</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+                    <div class="flex justify-between mt-6 pt-4 border-t border-amber-100 dark:border-slate-700">
+                        <button onclick="navQ(-1)" class="px-5 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 font-bold">← Trước</button>
+                        <button onclick="toggleFlag()" id="btn-flag" class="px-4 py-2 rounded-lg border-2 border-amber-400 text-amber-600 font-bold">🔖 Đánh dấu</button>
+                        <button onclick="navQ(1)" class="px-5 py-2 rounded-lg bg-bear-500 hover:bg-bear-600 text-white font-bold">Sau →</button>
                     </div>
                 </div>
-
-                <!-- Right: Question Grid Panel (1 col) -->
-                <div id="drawer-panel" class="hidden lg:block lg:col-span-1 cozy-card p-4 rounded-3xl border border-[#F1E5D5] dark:border-[#3d2d23] sticky top-24">
-                    <div class="flex items-center justify-between mb-3">
-                        <h4 class="font-extrabold text-xs sm:text-sm text-bear-dark dark:text-[#FAF5F0] flex items-center gap-1.5">
-                            <i class="fa-solid fa-list-ol text-honey"></i>
-                            <span>Bảng Câu Hỏi</span>
-                        </h4>
-                        <span id="grid-answered-badge" class="text-xs font-bold text-subtext">0/0</span>
-                    </div>
-
-                    <!-- Legend -->
-                    <div class="grid grid-cols-2 gap-1.5 text-[10px] font-medium text-subtext mb-3 pb-2.5 border-b border-[#F1E5D5] dark:border-[#3d2d23]">
-                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-honey"></span><span>Đã làm</span></div>
-                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-cream-300 dark:bg-[#34241b]"></span><span>Chưa làm</span></div>
-                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-pastel-yellow border border-amber-400"></span><span>Đánh dấu ⭐</span></div>
-                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded ring-2 ring-bear bg-white dark:bg-[#251b15]"></span><span>Đang xem</span></div>
-                    </div>
-
-                    <!-- Question Grid -->
-                    <div id="q-grid" class="grid grid-cols-5 gap-1.5 max-h-[340px] overflow-y-auto custom-scrollbar p-0.5">
-                        <!-- Number buttons injected by JS -->
-                    </div>
+                <!-- Cột phải: Grid chọn câu -->
+                <div class="lg:col-span-1 glass p-5 rounded-3xl border border-amber-200 dark:border-slate-800 h-fit">
+                    <h4 class="font-bold mb-4 text-center">Bảng Câu Hỏi</h4>
+                    <div id="q-grid" class="grid grid-cols-5 gap-2 max-h-96 overflow-y-auto custom-scrollbar"></div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= KẾT QUẢ BÀI THI (VIEW RESULT) ================= -->
-        <section id="view-result" class="view-section hidden max-w-2xl mx-auto w-full text-center">
-            <div class="cozy-card p-7 sm:p-10 rounded-3xl border border-[#F1E5D5] dark:border-[#3d2d23]">
-                
-                <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-cream-100 dark:bg-[#34241b] border border-[#EADBCC] dark:border-[#4d3628] flex items-center justify-center text-3xl">
-                    🎉
-                </div>
-
-                <h2 class="text-xl sm:text-3xl font-extrabold text-bear-dark dark:text-[#FAF5F0] mb-2">
-                    HOÀN THÀNH BÀI THI!
-                </h2>
-                <p id="r-message" class="text-xs sm:text-sm text-subtext dark:text-[#C5B8A8] mb-6 max-w-md mx-auto font-medium"></p>
-                
-                <!-- 4 Main Stats Cards -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-                    <div class="p-3.5 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e]">
-                        <p class="text-[11px] text-subtext font-semibold mb-0.5">Điểm Số (10)</p>
-                        <p id="r-score" class="text-2xl sm:text-3xl font-extrabold text-honey">0.0</p>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e]">
-                        <p class="text-[11px] text-subtext font-semibold mb-0.5">Số Câu Đúng</p>
-                        <p id="r-correct" class="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">0</p>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e]">
-                        <p class="text-[11px] text-subtext font-semibold mb-0.5">Số Câu Sai</p>
-                        <p id="r-wrong" class="text-2xl sm:text-3xl font-extrabold text-rose-500">0</p>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-cream-100 dark:bg-[#201611] border border-[#F1E5D5] dark:border-[#38271e]">
-                        <p class="text-[11px] text-subtext font-semibold mb-0.5">Tỷ Lệ Chuẩn</p>
-                        <p id="r-acc" class="text-2xl sm:text-3xl font-extrabold text-bear-dark dark:text-honey">0%</p>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="flex flex-wrap items-center justify-center gap-2.5">
-                    <button onclick="viewReview()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs transition-all flex items-center gap-1.5">
-                        <i class="fa-solid fa-book-open"></i>
-                        <span>Xem Lại Chi Tiết</span>
-                    </button>
-                    
-                    <button onclick="practiceWrong()" id="btn-practice-wrong" class="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs transition-all flex items-center gap-1.5">
-                        <i class="fa-solid fa-rotate-right"></i>
-                        <span>Luyện Lại Câu Sai</span>
-                    </button>
-
-                    <button onclick="retryCurrentQuiz()" class="px-5 py-2.5 rounded-xl bg-honey hover:bg-honey-600 text-white font-bold text-xs transition-all flex items-center gap-1.5">
-                        <i class="fa-solid fa-redo"></i>
-                        <span>Thi Lại Đề Này</span>
-                    </button>
-
-                    <button onclick="navigateTo('home')" class="px-5 py-2.5 rounded-xl bg-cream-300 dark:bg-[#34241b] text-bear-dark dark:text-[#FAF5F0] font-bold text-xs transition-all flex items-center gap-1.5">
-                        <i class="fa-solid fa-house"></i>
-                        <span>Về Trang Chủ</span>
-                    </button>
-                </div>
+        <!-- KẾT QUẢ & XEM LẠI & LỊCH SỬ (Giữ logic tương tự phiên bản trước, được tối ưu trong JS) -->
+        <section id="view-result" class="view-section hidden max-w-3xl mx-auto w-full text-center glass p-8 rounded-3xl">
+            <h2 class="text-4xl mb-2">🎉</h2>
+            <h2 class="text-3xl font-extrabold text-bear-600 dark:text-amber-500 mb-6">HOÀN THÀNH BÀI THI</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="p-4 bg-white dark:bg-slate-800 rounded-2xl shadow"><p class="text-sm">Điểm</p><p id="r-score" class="text-2xl font-bold text-sky-500">0</p></div>
+                <div class="p-4 bg-white dark:bg-slate-800 rounded-2xl shadow"><p class="text-sm">Đúng</p><p id="r-correct" class="text-2xl font-bold text-emerald-500">0</p></div>
+                <div class="p-4 bg-white dark:bg-slate-800 rounded-2xl shadow"><p class="text-sm">Sai</p><p id="r-wrong" class="text-2xl font-bold text-rose-500">0</p></div>
+                <div class="p-4 bg-white dark:bg-slate-800 rounded-2xl shadow"><p class="text-sm">Tỷ lệ</p><p id="r-acc" class="text-2xl font-bold text-purple-500">0%</p></div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="viewReview()" class="px-6 py-2 bg-slate-700 text-white rounded-xl font-bold">📖 Xem lại chi tiết</button>
+                <button onclick="practiceWrong()" class="px-6 py-2 bg-purple-600 text-white rounded-xl font-bold">🔄 Luyện câu sai</button>
+                <button onclick="navigateTo('home')" class="px-6 py-2 bg-bear-500 text-white rounded-xl font-bold">🏠 Về trang chủ</button>
             </div>
         </section>
 
-        <!-- ================= XEM LẠI BÀI LÀM (VIEW REVIEW) ================= -->
-        <section id="view-review" class="view-section hidden max-w-3xl mx-auto w-full">
-            <div class="flex items-center justify-between mb-5">
-                <button onclick="navigateTo('result')" class="group inline-flex items-center gap-2 text-bear-dark dark:text-honey font-bold text-xs sm:text-sm hover:underline transition-colors">
-                    <i class="fa-solid fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
-                    <span>Quay lại kết quả</span>
-                </button>
-
-                <!-- Filter Review Buttons -->
-                <div class="flex items-center gap-1 p-1 rounded-xl bg-cream-300 dark:bg-[#34241b] text-xs font-bold">
-                    <button onclick="filterReview('all')" id="rf-all" class="px-3 py-1 rounded-lg bg-white dark:bg-[#201611] text-slate-900 dark:text-white shadow-xs">Tất cả</button>
-                    <button onclick="filterReview('wrong')" id="rf-wrong" class="px-3 py-1 rounded-lg text-rose-500">Chỉ câu sai</button>
-                    <button onclick="filterReview('correct')" id="rf-correct" class="px-3 py-1 rounded-lg text-emerald-600 dark:text-emerald-400">Chỉ câu đúng</button>
-                </div>
-            </div>
-
-            <div id="review-list" class="space-y-4">
-                <!-- Review cards injected by JS -->
-            </div>
+        <section id="view-review" class="view-section hidden max-w-4xl mx-auto w-full">
+            <button onclick="navigateTo('result')" class="text-bear-500 font-bold mb-4 hover:underline">← Quay lại kết quả</button>
+            <div id="review-list" class="space-y-6"></div>
         </section>
 
-        <!-- ================= LỊCH SỬ LÀM BÀI (VIEW HISTORY) ================= -->
-        <section id="view-history" class="view-section hidden max-w-3xl mx-auto w-full">
-            <div class="cozy-card p-6 sm:p-8 rounded-3xl border border-[#F1E5D5] dark:border-[#3d2d23]">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 pb-4 border-b border-[#F1E5D5] dark:border-[#3d2d23]">
-                    <div>
-                        <h2 class="text-xl font-extrabold text-bear-dark dark:text-[#FAF5F0] flex items-center gap-2">
-                            <i class="fa-solid fa-clock-rotate-left text-honey"></i>
-                            <span>Lịch Sử Ôn Thi</span>
-                        </h2>
-                        <p class="text-xs text-subtext mt-0.5">Lưu trữ kết quả các bài ôn thi của bạn</p>
-                    </div>
-                    <button onclick="clearHistory()" class="self-start sm:self-center px-3.5 py-1.5 rounded-xl text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/40 text-xs font-bold border border-rose-200 dark:border-rose-900 transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-trash-can"></i>
-                        <span>Xóa lịch sử</span>
-                    </button>
-                </div>
-
-                <!-- History Table -->
-                <div class="overflow-x-auto rounded-2xl border border-[#F1E5D5] dark:border-[#3d2d23]">
-                    <table class="w-full text-left bg-white dark:bg-[#251b15] border-collapse">
-                        <thead>
-                            <tr class="bg-cream-100 dark:bg-[#201611] text-[11px] font-extrabold uppercase text-subtext tracking-wider">
-                                <th class="p-3.5">Ngày làm</th>
-                                <th class="p-3.5">Môn học</th>
-                                <th class="p-3.5">Điểm số</th>
-                                <th class="p-3.5">Chế độ</th>
-                            </tr>
-                        </thead>
-                        <tbody id="history-body" class="divide-y divide-[#F1E5D5] dark:divide-[#3d2d23] text-xs">
-                            <!-- Injected by JS -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+        <section id="view-history" class="view-section hidden max-w-4xl mx-auto w-full glass p-6 rounded-3xl">
+            <h2 class="text-2xl font-bold mb-6 text-bear-600 dark:text-amber-500">Lịch sử làm bài</h2>
+            <table class="w-full text-left bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow">
+                <thead class="bg-slate-100 dark:bg-slate-900"><tr><th class="p-3">Ngày</th><th class="p-3">Môn</th><th class="p-3">Điểm</th><th class="p-3">Chế độ</th></tr></thead>
+                <tbody id="history-body" class="divide-y divide-slate-100 dark:divide-slate-700"></tbody>
+            </table>
         </section>
     </main>
 
-    <!-- Confirmation Modal Before Submitting -->
-    <div id="modal-submit" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs hidden">
-        <div class="cozy-card p-6 sm:p-7 rounded-3xl max-w-sm w-full border border-[#F1E5D5] dark:border-[#3d2d23] text-center">
-            <div class="w-12 h-12 rounded-2xl bg-cream-100 dark:bg-[#34241b] text-honey text-2xl flex items-center justify-center mx-auto mb-3">
-                <i class="fa-solid fa-circle-question"></i>
-            </div>
-            <h3 class="text-lg font-extrabold text-bear-dark dark:text-[#FAF5F0] mb-1.5">Bạn muốn nộp bài thi?</h3>
-            <p id="modal-submit-summary" class="text-xs text-subtext mb-5"></p>
-            <div class="flex gap-2.5 justify-center">
-                <button onclick="closeSubmitModal()" class="px-4 py-2 rounded-xl bg-cream-300 dark:bg-[#34241b] font-bold text-xs text-subtext dark:text-[#FAF5F0]">
-                    Làm tiếp
-                </button>
-                <button onclick="submitQuiz()" class="px-4 py-2 rounded-xl bg-rose-500 hover:bg-rose-600 font-bold text-xs text-white">
-                    Nộp bài ngay 🚀
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Keyboard Shortcuts Modal -->
-    <div id="modal-keyboard" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs hidden" onclick="if(event.target===this) closeKeyboardModal()">
-        <div class="cozy-card p-6 rounded-3xl max-w-sm w-full border border-[#F1E5D5] dark:border-[#3d2d23]">
-            <div class="flex items-center justify-between mb-4">
-                <h3 class="text-sm font-extrabold text-bear-dark dark:text-[#FAF5F0] flex items-center gap-2">
-                    <i class="fa-solid fa-keyboard text-honey"></i>
-                    <span>Phím Tắt Tiện Ích</span>
-                </h3>
-                <button onclick="closeKeyboardModal()" class="text-subtext hover:text-bear-dark text-sm">✕</button>
-            </div>
-            <div class="space-y-2.5 text-xs">
-                <div class="flex justify-between items-center p-2 rounded-xl bg-cream-100 dark:bg-[#201611]">
-                    <span class="text-subtext">Chọn đáp án</span>
-                    <div class="flex gap-1">
-                        <kbd class="px-1.5 py-0.5 rounded bg-white dark:bg-[#34241b] font-mono text-[11px] font-bold">A-D</kbd>
-                        <span class="text-subtext">hoặc</span>
-                        <kbd class="px-1.5 py-0.5 rounded bg-white dark:bg-[#34241b] font-mono text-[11px] font-bold">1-4</kbd>
-                    </div>
-                </div>
-                <div class="flex justify-between items-center p-2 rounded-xl bg-cream-100 dark:bg-[#201611]">
-                    <span class="text-subtext">Chuyển câu</span>
-                    <div class="flex gap-1">
-                        <kbd class="px-1.5 py-0.5 rounded bg-white dark:bg-[#34241b] font-mono text-[11px] font-bold">←</kbd>
-                        <kbd class="px-1.5 py-0.5 rounded bg-white dark:bg-[#34241b] font-mono text-[11px] font-bold">→</kbd>
-                    </div>
-                </div>
-                <div class="flex justify-between items-center p-2 rounded-xl bg-cream-100 dark:bg-[#201611]">
-                    <span class="text-subtext">Đánh dấu</span>
-                    <kbd class="px-2 py-0.5 rounded bg-white dark:bg-[#34241b] font-mono text-[11px] font-bold">F</kbd>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
