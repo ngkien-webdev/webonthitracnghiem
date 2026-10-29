@@ -1,19 +1,251 @@
-/* style.css */
-.glass {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-.dark .glass {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
-.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-.custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-.dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; }
+/* style.css - Nhận diện thương hiệu "Nơi Ôn Thi Của Nhà Gấu" */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-/* Ẩn hiện mượt mà */
-.view-section { animation: fadeIn 0.3s ease-in-out; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+:root {
+    --color-bear: #8B4513;
+    --color-bear-dark: #65351F;
+    --color-cream: #FFF9F0;
+    --color-white: #FFFFFF;
+    --color-honey: #F4A340;
+    --color-pastel-pink: #F7DDE3;
+    --color-pastel-green: #DDECCF;
+    --color-text-sub: #718096;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-cream);
+    color: #2D3748;
+}
+
+/* Dark Mode Cozy Palette */
+.dark body,
+body.dark {
+    background-color: #19120e;
+    color: #F7FAFC;
+}
+
+/* Warm Card Containers */
+.cozy-card {
+    background: #FFFFFF;
+    border: 1px solid #F1E5D5;
+    box-shadow: 0 4px 16px -2px rgba(101, 53, 31, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .cozy-card {
+    background: #251b15;
+    border: 1px solid #3d2d23;
+    box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.cozy-card-interactive {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cozy-card-interactive:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px -4px rgba(139, 69, 19, 0.12), 0 0 0 1px rgba(244, 163, 64, 0.3);
+}
+.dark .cozy-card-interactive:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(244, 163, 64, 0.4);
+}
+
+/* Navbar Glass Warm */
+.navbar-cozy {
+    background: rgba(255, 249, 240, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid #EFE0CF;
+}
+.dark .navbar-cozy {
+    background: rgba(25, 18, 14, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid #36271e;
+}
+
+/* Mascot Micro-interaction */
+.bear-mascot {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.bear-mascot:hover {
+    transform: rotate(-6deg) scale(1.1);
+}
+
+@keyframes gentleWobble {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-3px) rotate(-1.5deg); }
+    75% { transform: translateY(-1px) rotate(1.5deg); }
+}
+
+.animate-wobble-slow {
+    animation: gentleWobble 6s infinite ease-in-out;
+}
+
+/* Smooth Transitions */
+.view-section {
+    animation: viewAppear 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes viewAppear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cozy Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #E2D2C0;
+    border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #CBB49E;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #47352a;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #5d4638;
+}
+
+/* Option Button */
+.quiz-opt-btn {
+    transition: all 0.18s ease-out;
+}
+.quiz-opt-btn:hover:not(:disabled) {
+    transform: translateX(4px);
+}
+.quiz-opt-btn:active:not(:disabled) {
+    transform: scale(0.99);
+}
+
+/* Notebook Spiral Clip Design from MCBooks */
+.notebook-tips {
+    position: relative;
+    border-radius: 20px;
+    background: #FFFDF9;
+    border: 1.5px solid #EADBCC;
+    box-shadow: 0 6px 18px rgba(101, 53, 31, 0.05);
+}
+.dark .notebook-tips {
+    background: #231913;
+    border: 1.5px solid #47352a;
+}
+.notebook-rings {
+    display: flex;
+    justify-content: space-around;
+    padding: 6px 16px;
+    border-bottom: 2px dashed #E2D2C0;
+}
+.dark .notebook-rings {
+    border-bottom: 2px dashed #4d382c;
+}
+.ring-hole {
+    width: 8px;
+    height: 12px;
+    border-radius: 4px;
+    background: #D5BEA8;
+}
+.dark .ring-hole {
+    background: #5a4335;
+}
+
+/* Missing Letter Interactive Input Box */
+.missing-letter-input {
+    width: 34px;
+    height: 40px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border: 2px dashed #F4A340;
+    background: #FFFDF9;
+    color: #65351F;
+    transition: all 0.2s;
+}
+.dark .missing-letter-input {
+    background: #2c2018;
+    color: #F4A340;
+    border-color: #F4A340;
+}
+.missing-letter-input:focus {
+    outline: none;
+    border-style: solid;
+    border-color: #8B4513;
+    box-shadow: 0 0 0 3px rgba(244, 163, 64, 0.25);
+}
+.missing-letter-input.correct {
+    border-color: #10b981 !important;
+    border-style: solid !important;
+    background: #ecfdf5 !important;
+    color: #047857 !important;
+}
+.missing-letter-input.wrong {
+    border-color: #f43f5e !important;
+    border-style: solid !important;
+    background: #fff1f2 !important;
+    color: #be123c !important;
+}
+
+/* Matching Game Card */
+.matching-card {
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    user-select: none;
+}
+.matching-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(139, 69, 19, 0.08);
+}
+.matching-card.selected {
+    border-color: #F4A340 !important;
+    background-color: #FFF3E0 !important;
+    box-shadow: 0 0 0 2px #F4A340;
+}
+.dark .matching-card.selected {
+    background-color: #382417 !important;
+}
+.matching-card.matched {
+    border-color: #10b981 !important;
+    background-color: #ecfdf5 !important;
+    color: #047857 !important;
+    pointer-events: none;
+    opacity: 0.85;
+}
+.dark .matching-card.matched {
+    background-color: #064e3b !important;
+    color: #a7f3d0 !important;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .bear-mascot:hover,
+    .cozy-card-interactive:hover,
+    .quiz-opt-btn:hover {
+        transform: none !important;
+    }
+}
